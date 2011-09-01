@@ -1,6 +1,6 @@
 Intro
 =====
-``Process`` is a very simple programming environment that let you execute
+``Process!`` is a very simple programming environment that let you execute
 Processing sketches (see http://processing.org/). It basically runs a Webkit
 engine that loads ``processing.js`` (see http://processingjs.org/). Everything
 that runs fine under ``processing.js`` will run fine in ``Process!``. The
@@ -19,6 +19,15 @@ execute your code.
 
 To get back to the code editor just press and hold the left mouse button
 within the Processing sketch. Or tap and hold on touchscreens.
+
+You have to install PySide to start ``Process!``. Then just type::
+
+  $ python process
+  
+Add the command line argument ``-f`` to start in fullscreen mode. The latter
+only works well when OpenGL is supported on your system.
+
+
 
 Examples
 ========
