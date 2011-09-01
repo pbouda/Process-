@@ -1,0 +1,11 @@
+[Project]
+category = Other
+maintainer = Peter Bouda
+appname = Process!
+section = other
+pyversion = 2.6
+project = process
+template = harmattan
+email = pbouda@cidles.eu
+desc = Process! Code processing.js sketches.
+

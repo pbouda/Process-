@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+import os, sys, optparse
+from PySide import QtCore, QtGui, QtDeclarative
+
+def main(argv):
+    parser = optparse.OptionParser()
+    parser.add_option("-f", "--fullscreen", dest="fullscreen", help="Start application in fullscreen mode", action="store_true", default=False)
+    
+    (options, args) = parser.parse_args()
+    
+    qml_path = "qml"
+    process_script = argv[0]
+    if os.path.islink(process_script):
+        process_script = os.readlink(process_script)
+    prefix = os.path.join(os.path.dirname(process_script), '..')
+    prefix = os.path.abspath(os.path.normpath(prefix))
+    if prefix.startswith('/usr'):
+        qml_path = os.path.join(prefix, 'share', 'process', 'qml')
+
+    app = QtGui.QApplication(argv)
+    view = QtDeclarative.QDeclarativeView()
+    view.setSource(QtCore.QUrl(os.path.join(qml_path, "main.qml")))
+    view.setResizeMode(QtDeclarative.QDeclarativeView.SizeRootObjectToView)
+    if options.fullscreen:
+        from PySide import QtOpenGL
+        glw = QtOpenGL.QGLWidget()
+        view.setViewport(glw)
+        view.showFullScreen()
+    else:
+        view.show()
+    app.exec_()
+
+if __name__ == "__main__":
+    main(sys.argv)

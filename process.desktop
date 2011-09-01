@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=Process!
+Exec=invoker --single-instance --type=e /usr/bin/process -f
+Icon=/usr/share/icons/hicolor/64x64/apps/process.png

@@ -1,0 +1,6 @@
+include *.desktop
+include qml/*.qml
+include qml/*.js
+include qml/*.html
+include *.png
+include process.longdesc
