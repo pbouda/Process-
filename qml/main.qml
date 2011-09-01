@@ -29,7 +29,7 @@ Rectangle {
                 anchors.rightMargin: 20
                 horizontalAlignment: TextEdit.AlignRight
                 color: "blue"
-                text: "<a href=\"http://www.dasskript.com/apps/process\">Help</a>"
+                text: "<a href=\"https://github.com/pbouda/Process-\">Help</a>"
                 onLinkActivated: Qt.openUrlExternally(link)
             }
         }
